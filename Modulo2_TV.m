@@ -6,12 +6,14 @@ clear all
 close all
 
 % Creo arrays y matriz con doble for..
-x = -pi:0.1:pi;
-y = -2:0.1:2;
-Z = ones(length(x),length(y));
+x = -2:0.1:2;
+y = -pi:0.1:pi;
+
+[X,Y] = meshgrid(x,y);
+Z = ones(length(y),length(x));
 for i = 1:length(x)
     for j = 1: length(y)
-        Z(i,j) = sin(x(i));
+        Z(j,i) = sin(y(j));
     end
 end
 % O directamente..
@@ -21,9 +23,9 @@ end
 % Ploteo como superficie y como malla...
 figure('units','centimeters','position',[5,5,24,10]);
 subplot(1,2,1);
-surf(Z);
+surf(X,Y,Z);
 subplot(1,2,2);
-mesh(Z);
+mesh(X,Y,Z);
 
 % Ploteo como imagen..
 % no corrido en mi comp xq no tengo el toolbox
@@ -66,10 +68,10 @@ for i = 1:length(lev)
    hold on
 end
 
-title(ax1,'Funcion de cuantizacion');
+title(ax1,'Funcion de cuantización');
 ylabel(ax1,'Salida');
 xlabel(ax1,'Entrada');
-title(ax2,'Error de cuantizacion');
+title(ax2,'Error de cuantización');
 ylabel(ax2,'Error');
 xlabel(ax2,'Entrada');
 
