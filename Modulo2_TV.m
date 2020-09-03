@@ -1,4 +1,3 @@
-
 %% 2.1 ACTIVIDAD 1
 
 clc
@@ -8,8 +7,9 @@ close all
 % Creo arrays y matriz con doble for..
 x = -2:0.1:2;
 y = -pi:0.1:pi;
-
 [X,Y] = meshgrid(x,y);
+
+% Con for anidado..
 Z = ones(length(y),length(x));
 for i = 1:length(x)
     for j = 1: length(y)
@@ -17,8 +17,7 @@ for i = 1:length(x)
     end
 end
 % O directamente..
-%[X,Y] = meshgrid(x,y);
-% Z = sin(X);
+%Z = sin(Y);
 
 % Ploteo como superficie y como malla...
 figure('units','centimeters','position',[5,5,24,10]);
