@@ -11,9 +11,9 @@ y = -pi:0.1:pi;
 
 % Con for anidado..
 Z = ones(length(y),length(x));
-for i = 1:length(x)
-    for j = 1: length(y)
-        Z(j,i) = sin(y(j));
+for i = 1:length(y)
+    for j = 1: length(x)
+        Z(i,j) = sin(y(i));
     end
 end
 % O directamente..
@@ -75,4 +75,38 @@ ylabel(ax2,'Error');
 xlabel(ax2,'Entrada');
 
 % Alternativamente usando el comando quantiz()
+
+%% ACTIVIDAD 3
+
+
+
+
+
+%% ACTIVIDAD 4BIS
+
+clc
+close all
+clear all
+
+% Uso una funcion para leer la imagen y mostrar la info solicitada..
+[im, inf, cmap] = imag_();
+% Muestro la imagen..
+% imshow(img,[])
+
+
+% La funcion, en archivo aparte es..
+% function [img, info, colormap] = imag()
+% % Leo archivo y metadata..
+%     [file,dir] = uigetfile('*.bmp;*.jpg;*.png; *.tif'); %filtro para archivos bmp, jpg y png
+%     filename = [dir,file];
+%     info = imfinfo(filename);
+%     [img, colormap] = imread(filename);
+% % La informacion solicitada..
+%     fprintf('Nombre de archivo: %s.\n', file)
+%     fprintf('Tamano en pixeles: %d.\n', info.Width * info.Height)
+%     fprintf('Profundidad de bits: %d.\n', info.BitDepth)
+%     fprintf('Tipo de color: %s.\n', info.ColorType)
+%     fprintf('Tipo de dato: %s.\n', class(img))
+% end
+
 %%
