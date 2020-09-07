@@ -82,31 +82,36 @@ xlabel(ax2,'Entrada');
 
 
 
-%% ACTIVIDAD 4BIS
+%% ACTIVIDAD 4 
 
 clc
 close all
 clear all
 
 % Uso una funcion para leer la imagen y mostrar la info solicitada..
-[im, inf, cmap] = imag_();
-% Muestro la imagen..
-% imshow(img,[])
+figure('position',[0 0 1200 620])
+subplot(1,3,1)
+[img, inf, cmap] = imag_();
+subplot(1,3,2)
+[img, inf, cmap] = imag_();
+subplot(1,3,3)
+[img, inf, cmap] = imag_();
 
-
-% La funcion, en archivo aparte es..
-% function [img, info, colormap] = imag()
+% La funcion, en archivo aparte, es..
+% function [img, info, colormap] = imag_()
 % % Leo archivo y metadata..
 %     [file,dir] = uigetfile('*.bmp;*.jpg;*.png; *.tif'); %filtro para archivos bmp, jpg y png
 %     filename = [dir,file];
 %     info = imfinfo(filename);
 %     [img, colormap] = imread(filename);
-% % La informacion solicitada..
+% % Imprimo la informacion solicitada..
 %     fprintf('Nombre de archivo: %s.\n', file)
 %     fprintf('Tamano en pixeles: %d.\n', info.Width * info.Height)
 %     fprintf('Profundidad de bits: %d.\n', info.BitDepth)
 %     fprintf('Tipo de color: %s.\n', info.ColorType)
 %     fprintf('Tipo de dato: %s.\n', class(img))
+% % Muestro la imagen..
+%     imshow(img,[])
 % end
 
 %%
